@@ -13,6 +13,10 @@
 ActiveRecord::Schema.define(version: 2020_11_30_034156) do
 
   create_table "trips", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.text "title"
+    t.string "text"
+    t.text "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
