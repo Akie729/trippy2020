@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get 'trips/index'
   root to: "trips#index"
+  resources :trips, only: :index
 end
