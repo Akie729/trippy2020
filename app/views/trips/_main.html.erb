@@ -1,6 +1,7 @@
 <div class="contents row">
   <% @trips.each do |trip| %>
-    <div class="content_post" style="background-image: url(<%= trip.image %>);">
+    <div class="content_post">
+      <%= image_tag trip.image, class: 'trip-image' %>
       <p><%= trip.text %></p>
       <span class="name">
         <%= trip.name %>
