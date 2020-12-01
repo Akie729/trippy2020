@@ -1,7 +1,8 @@
+＜メイン画面＞
 <div class="contents row">
   <% @trips.each do |trip| %>
     <div class="content_post">
-      <%= image_tag trip.image, class: 'trip-image' %>
+      <%= image_tag trip.image, :size =>'320x320', class: 'trip-image' %>
       <p><%= trip.text %></p>
       <span class="name">
         <%= trip.name %>

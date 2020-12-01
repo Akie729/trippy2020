@@ -1,7 +1,8 @@
 class Trip < ApplicationRecord
-  has_many_attached :images
+  has_one_attached :image
 
   validates :image, presence: true
   validates :name, presence: true
   validates :text, presence: true
+  validates :title, presence: true
 end
