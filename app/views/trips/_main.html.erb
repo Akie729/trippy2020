@@ -1,12 +1,15 @@
 ＜メイン画面＞
 <div class="contents row">
   <% @trips.each do |trip| %>
-    <div class="content_post">
-      <%= image_tag trip.image, :size =>'320x320', class: 'trip-image' %>
-      <p><%= trip.text %></p>
+    <div class="contents">
       <span class="name">
-        <%= trip.name %>
-      </span>
+      <%= trip.name %>
+    </span>
+      <p><%= trip.title%></p>
+      <% trip.images.each do |image| %>
+        <%= image_tag image.variant(resize: "250x250"), class:'images' %><br>
+      <% end %>
     </div>
+    <p><%= trip.text%></p>
   <% end %>
 </div>
