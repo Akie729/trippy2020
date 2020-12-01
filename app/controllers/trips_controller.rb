@@ -9,4 +9,12 @@ class TripsController < ApplicationController
 
   def create
   end
+
+
+  private
+
+  def trip_params
+    params.require(:trip).permit(:name, :title, :text, images: [])
+  end
+
 end
