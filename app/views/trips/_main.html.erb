@@ -1,15 +1,16 @@
 ＜メイン画面＞
-<div class="contents row">
+<div class="card" style="max-width: 25rem;">
   <% @trips.each do |trip| %>
-    <div class="contents">
-      <span class="name">
-      <%= trip.name %>
-    </span>
-      <p><%= trip.title%></p>
+    <img class="card-img-top">
       <% trip.images.each do |image| %>
-        <%= image_tag image.variant(resize: "250x250"), class:'images' %><br>
+        <%= image_tag image.variant(resize: "250x250"), class:"bd-placeholder-img" %><br>
       <% end %>
+    <div class="card-body">
+      <h5 class="card-title"><%= trip.text%></h5>
+      <span class="name">
+        <%= trip.name %><br>
+        <%= trip.text%>
+      </span>
     </div>
-    <p><%= trip.text%></p>
   <% end %>
 </div>
