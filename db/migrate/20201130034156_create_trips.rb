@@ -4,7 +4,6 @@ class CreateTrips < ActiveRecord::Migration[6.0]
       t.string :name
       t.text :title
       t.string :text
-      t.text :image
   
       t.timestamps
     end
