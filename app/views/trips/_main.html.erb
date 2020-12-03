@@ -7,7 +7,7 @@
         <div class="carousel-inner">
           <div class="carousel-item.active">
             <% trip.images.each do |image| %>
-              <%= image_tag image.variant(resize: "250x250"), class: "bd-placeholder-img" %><br>
+              <%= image_tag image, class: "bd-placeholder-img" %><br>
             <% end %>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
