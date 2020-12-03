@@ -5,10 +5,7 @@
   <%= f.text_area :text, placeholder: "text", rows: "10" %><br><br>
   <%= f.submit "SEND" %>
   
-  <div class="images">
-    <div id="image-list"></div>
-  </div>
-
+  <div id="image-list"></div>
 <%end%>
-  <%= images_tag @trips.images, id: 'images' if @trip.images.present?%>
 
+<%= image_tag @trip.images[0], id: 'image' if @trip.images.present? %> 
