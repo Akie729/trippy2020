@@ -1,4 +1,6 @@
 class TripsController < ApplicationController
+  before_action :move_to_index, only: :new
+
   def index
     @trips = Trip.all.order(created_at: :desc)
   end
@@ -20,6 +22,12 @@ class TripsController < ApplicationController
   private
   def trip_params
     params.require(:trip).permit(:name, :title, :text, images: [])
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 
 end
