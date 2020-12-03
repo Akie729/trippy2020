@@ -5,4 +5,6 @@ class Trip < ApplicationRecord
   validates :name, presence: true
   validates :text, presence: true
   validates :title, presence: true
+
+  belongs_to :user
 end
