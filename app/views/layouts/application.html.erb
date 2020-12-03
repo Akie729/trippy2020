@@ -25,9 +25,9 @@
               <a class="nav-item nav-link" href="#">マイページ</a>
               <% if user_signed_in? %>
                 <div class="nav-item nav-link">
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
                   <%= link_to "New trip", new_trip_path, class: :nav__btn%>
                   <%= link_to "My Page", "#", class: :nav__btn%>
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
               <% else %>
                 <div class="nav-item nav-link">
                   <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>

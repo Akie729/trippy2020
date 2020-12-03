@@ -3,7 +3,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :trips
-　
   with_options presence: true do
     validates :name
     validates :age
