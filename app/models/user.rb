@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :trips
 
   validates :name, presence: true
-  validates :age
-  validates :sex
+  validates :age, presence: true
+  validates :sex, presence: true
 
 end
