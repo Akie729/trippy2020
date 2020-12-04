@@ -1,0 +1,35 @@
+<main class="main">
+  <div class="inner">
+    <div class="prototype__wrapper">
+      <%= link_to "by #{@trips.user.name}", "/users/#{@trips.user_id}", class: :trip__user %>
+      <p class="prototype__hedding">
+        <%= @trips.title%>
+      </p>
+        <img class="card-img-top">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item.active">
+                <% @trips.images.each do |image| %>
+                  <%= image_tag image, class: "bd-placeholder-img" %><br>
+                <% end %>
+              <ul class="more_list">
+                <% if user_signed_in? && current_user.id == @trips.user_id %>
+                  <li>
+                    <%= link_to '編集', edit_trip_path(@trips.id) %>
+                  </li>
+                  <li>
+                    <%= link_to '削除', trip_path(@trips.id), method: :delete %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          <div>
+        </div>
+      <div class="card-body">
+        <span class="name">
+          <%= @trips.user.name %><br>
+          <%= @trips.text%>
+        </span>
+      </div>
+  </div>
+</main>
