@@ -1,4 +1,11 @@
-＜メイン画面＞
+<div class="header">
+  <% if user_signed_in? %>
+        <div class="greeting">
+          こんにちは、<%= link_to "#{current_user.name}", "/users/#{current_user.id}", class: :greeting__link %>さん
+        </div>
+  <% end %>
+</div>
+
 <div class="card" style="max-width: 15rem;">
   <% @trips.each do |trip| %>
     <h5 class="card-title"><%= trip.title%></h5>
@@ -22,7 +29,7 @@
       </div>
     <div class="card-body">
       <span class="name">
-        <%= trip.name %><br>
+        <%# <%= trip.name %><br>
         <%= trip.text%>
       </span>
     </div>

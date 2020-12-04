@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2020_12_03_054944) do
   end
 
   create_table "trips", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
     t.text "title"
     t.string "text"
     t.datetime "created_at", precision: 6, null: false

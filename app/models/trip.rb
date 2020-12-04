@@ -4,7 +4,6 @@ class Trip < ApplicationRecord
 
   with_options presence: true do
     validates :images
-    validates :name
     validates :text
     validates :title
   end
