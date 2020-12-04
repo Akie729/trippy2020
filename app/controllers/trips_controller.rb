@@ -21,7 +21,7 @@ class TripsController < ApplicationController
 
   private
   def trip_params
-    params.require(:trip).permit(:name, :title, :text, images: [])
+    params.require(:trip).permit(:name, :title, :text, images: []).merge(user_id: current_user.id)
   end
 
   def move_to_index

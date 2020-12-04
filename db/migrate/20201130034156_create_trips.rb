@@ -3,6 +3,7 @@ class CreateTrips < ActiveRecord::Migration[6.0]
     create_table :trips do |t|
       t.text :title
       t.string :text
+      
   
       t.timestamps
     end
