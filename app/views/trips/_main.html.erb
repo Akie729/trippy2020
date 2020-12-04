@@ -16,6 +16,17 @@
             <% trip.images.each do |image| %>
               <%= image_tag image, class: "bd-placeholder-img" %><br>
             <% end %>
+            <ul class="more_list">
+          <li>
+            <%= link_to '詳細', "#", method: :get %>
+          </li>
+          <li>
+            <%= link_to '編集', "#", method: :get %>
+          </li>
+          <li>
+            <%= link_to '削除', trip_path(trip.id), method: :delete %>
+          </li>
+        </ul>
             <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -29,7 +40,7 @@
       </div>
     <div class="card-body">
       <span class="name">
-        <%# <%= trip.name %><br>
+        <%= trip.user.name %><br>
         <%= trip.text%>
       </span>
     </div>
