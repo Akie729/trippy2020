@@ -11,7 +11,7 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    if @trip.save 
+    if @trip.save
       redirect_to root_path
     else
       render :new

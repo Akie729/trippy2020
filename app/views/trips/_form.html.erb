@@ -1,13 +1,12 @@
 <%= form_with model: @trip, id: 'new_trip', local: true do |f| %>
-  <%= f.text_field :name, placeholder: "name" %><br>
+  <%= f.text_field :name, placeholder: "name" %>　　　　　<%= f.submit "SEND" %><br>
   <%= f.text_field :title, placeholder: "title" %><br><br>
   <%= f.text_area :text, placeholder: "text", rows: "10" %><br><br>
-  <%= f.file_field :images, multiple: true %><br>
+  <%= f.file_field :images, name: 'trip[images][]', multiple: true %><br>
  
   
   <div id="image-list"></div>
 
-  <%= f.submit "SEND" %>
 <%end%>
 
 <% @trip.images.each do |image| %>
