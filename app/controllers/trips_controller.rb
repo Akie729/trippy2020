@@ -24,6 +24,9 @@ class TripsController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @trip = Trip.find(params[:id])
+
 
   private
   def trip_params
