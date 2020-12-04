@@ -8,7 +8,7 @@
 
 <div class="card" style="max-width: 15rem;">
   <% @trips.each do |trip| %>
-    <h5 class="card-title"><%= trip.title%></h5>
+    <h5><%= link_to trip.title, trip_path(trip.id), class: :trip__title%></h5>
     <img class="card-img-top">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
