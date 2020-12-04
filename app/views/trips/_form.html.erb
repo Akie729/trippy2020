@@ -1,11 +1,15 @@
 <%= form_with model: @trip, id: 'new_trip', local: true do |f| %>
   <%= f.text_field :name, placeholder: "name" %><br>
   <%= f.text_field :title, placeholder: "title" %><br><br>
-  <%= f.file_field :images, multiple: true %><br>
   <%= f.text_area :text, placeholder: "text", rows: "10" %><br><br>
-  <%= f.submit "SEND" %>
+  <%= f.file_field :images, multiple: true %><br>
+ 
   
   <div id="image-list"></div>
+
+  <%= f.submit "SEND" %>
 <%end%>
 
-<%= image_tag @trip.images[0], id: 'image' if @trip.images.present? %> 
+<% @trip.images.each do |image| %>
+  <%= image_tag image, class: 'images' %>
+<% end %>
