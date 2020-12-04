@@ -18,10 +18,29 @@ class TripsController < ApplicationController
     end
   end
 
+  def destroy
+    trip = Trip.find(params[:id])
+    trip.destroy
+    redirect_to root_path
+  end
+
+  def edit
+    @trip = Trip.find(params[:id])
+  end
+
+  def update
+    @trip = Trip.find(params[:id])
+    if @trip.update(trip_params)
+       redirect_to root_path
+      else
+        render :edit
+      end
+  end
+
 
   private
   def trip_params
-    params.require(:trip).permit(:name, :title, :text, images: [])
+    params.require(:trip).permit(:name, :title, :text, images: []).merge(user_id: current_user.id)
   end
 
   def move_to_index
