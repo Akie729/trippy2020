@@ -24,11 +24,10 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <a class="nav-item nav-link" href="#">マイページ</a>
               <% if user_signed_in? %>
                 <div class="nav-item nav-link">
                   <%= link_to "New trip", new_trip_path, class: :nav__btn%>
-                  <%= link_to "My Page", "#", class: :nav__btn%>
+                  <%= link_to "My Page", "/users/#{current_user.id}", class: :nav__btn%>
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
               <% else %>
                 <div class="nav-item nav-link">
