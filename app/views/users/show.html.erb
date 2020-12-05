@@ -1,0 +1,18 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{current_user.name}さんの投稿一覧"%>
+      </h2>
+        <% @trips.each do |trip| %>
+          <div class="container">
+            <p><%= trip.title %></p>
+            <% trip.images.each do |image| %><br>
+              <%= image_tag image, class: "bd-placeholder-img" %><br>
+            <% end %>
+              <p><%= trip.text %></p>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
