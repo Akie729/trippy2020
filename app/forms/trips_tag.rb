@@ -10,6 +10,7 @@ class TripsTag
     validates :text
     validates :title
     validates :user_id
+    validates :name
   end
 
   def save

@@ -6,12 +6,13 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = Trip.new
+    @trip = TripsTag.new
   end
 
   def create
-    @trip = Trip.new(trip_params)
-    if @trip.save
+    @trip = TripsTag.new(trip_params)
+    if @trips.valid?
+      @trip.save
       redirect_to root_path
     else
       render :new
@@ -44,7 +45,7 @@ class TripsController < ApplicationController
 
   private
   def trip_params
-    params.require(:trip).permit(:name, :title, :text, images: []).merge(user_id: current_user.id)
+    params.require(:trip_tag).permit(:name, :title, :text, images: []).merge(user_id: current_user.id)
   end
 
   def move_to_index
