@@ -31,6 +31,13 @@
       <span class="name">
         <%= trip.user.name %><br>
         <%= trip.text%>
+        <ul class="tag">
+          <li class="tag-list">
+            <%trip.tags.each do |tag| %>
+              #<%=tag.name%>
+            <%end%>
+          </li>
+        </ul>
       </span>
     </div>
   <% end %>

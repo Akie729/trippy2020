@@ -1,6 +1,11 @@
-<%= form_with model: @trip, id: 'new_trip', local: true do |f| %>
+<%= form_with(model: @trip, url: trips_path, local: true) do |f| %>
   <%= f.text_field :title, placeholder: "title" %>　　　　　<%= f.submit "SEND" %><br><br>
-  <%= f.text_area :text, placeholder: "text", rows: "10" %><br><br>
+  <%= f.text_area :text, placeholder: "text", rows: "10" %><br>
+  <div class="tag-field", id='tag-field'>
+      <%= f.text_field :name, placeholder: "タグ", class:"input-tag" %><br><br>
+    </div>
+    <div id="search-result">
+    </div>
   <%= f.file_field :images, name: 'trip[images][]', multiple: true %>
  
   <div id="image-list"></div>
@@ -9,4 +14,5 @@
 
 <% @trip.images.each do |image| %>
   <%= image_tag image, class: 'images' %>
-<% end %>
+<% end %> 
+

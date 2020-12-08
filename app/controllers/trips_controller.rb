@@ -6,31 +6,31 @@ class TripsController < ApplicationController
   end
 
   def new
-    @trip = TripsTag.new
+    @trip = TripTag.new
   end
 
   def create
-    @trip = TripsTag.new(trip_params)
-    if @trips.valid?
+    @trip = TripTag.new(trip_params)
+    if @trip.valid?
       @trip.save
       redirect_to root_path
     else
-      render :new
+      redirect_to :new
     end
   end
 
   def destroy
-    trip = Trip.find(params[:id])
+    trip = TripTag.find(params[:id])
     trip.destroy
     redirect_to root_path
   end
 
   def edit
-    @trip = Trip.find(params[:id])
+    @trip = TripTag.find(params[:id])
   end
 
   def update
-    @trip = Trip.find(params[:id])
+    @trip = TripTag.find(params[:id])
     if @trip.update(trip_params)
        redirect_to root_path
       else
@@ -39,13 +39,13 @@ class TripsController < ApplicationController
   end
 
   def show
-    @trips = Trip.find(params[:id])
+    @trips = TripTag.find(params[:id])
   end
 
 
   private
   def trip_params
-    params.require(:trip_tag).permit(:name, :title, :text, images: []).merge(user_id: current_user.id)
+    params.require(:triptag).permit(:name, :title, :text, images: []).merge(user_id: current_user.id)
   end
 
   def move_to_index
