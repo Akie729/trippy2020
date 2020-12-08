@@ -1,0 +1,90 @@
+.jumbotron-extend {
+  position: relative;
+  height: 100vh;
+  min-height: 300px;
+  background: url("main.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.jumbotron-container {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.greeting{
+  color: white;
+}
+
+.site-name {
+  color: white;
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+}
+.btn-black {
+  border-radius: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Avenir', serif;
+}
+.btn-black:hover {
+   background-color: #fff;
+   color: #000;
+}
+
+.navbar{
+  max-width: 1190px;
+}
+
+.contents {
+  max-width: 990px;
+  margin: 0 auto;
+}
+.content-primary,
+.content-secondary {
+  padding-left: 0;
+  padding-right: 0;
+}
+.content-primary {
+  float: left;
+  width: 52.08%;
+}
+.content-secondary {
+  float: right;
+  width: 37.92%;
+}
+
+.post-item {
+  margin-bottom: 65px;
+}
+.post-item-header {
+  margin-bottom: 20px;
+}
+.post-item-header .media-body {
+  font-family: "Avenir", serif;
+  vertical-align: middle;
+}
+.post-item-header .media-body .media-heading,
+.post-item-header .media-body .updated {
+  font-size: 20px;
+}
+.post-item-header .media-body .updated {
+  margin-bottom: 0;
+}
+.post-item-header .media-body .updated .icon {
+  margin: 0 10px;
+  vertical-align: -1px;
+}
+.post-item h3 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 36px;
+  font-family: "Playfair Display", serif;
+}
+.post-item p {
+  font-size: 21px;
+}
+
+.bd-placeholder-img{
+  width: 300px;
+}
