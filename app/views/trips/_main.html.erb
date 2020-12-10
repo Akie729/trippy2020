@@ -1,9 +1,6 @@
 <article class="post-item">
   <% @trips.each do |trip| %>
     <header class="media post-item-header">
-      <div class="media-left">
-          <a href="#"><img src= "assets/images/icon.jpg" alt="icon" class="media-object"></a>
-      </div>
       <div class="media-body">
         <span class="name">
             @<%= link_to "#{trip.user.name}", "/users/#{trip.user_id}" %><br>
