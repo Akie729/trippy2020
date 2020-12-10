@@ -1,9 +1,0 @@
-.images{
-  display: flex;
-  justify-content: space-between;
-}
-
-img{
-  max-width: 250px;
-  height: auto;
-}

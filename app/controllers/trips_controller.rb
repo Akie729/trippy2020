@@ -1,5 +1,6 @@
 class TripsController < ApplicationController
   before_action :move_to_index, only: :new
+  protect_from_forgery :except => [:destroy]
 
   def index
     @trips = Trip.all.order(created_at: :desc)

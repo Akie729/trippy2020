@@ -1,13 +1,23 @@
-<div class="container bg-light">
-  <div class="row">
-    <div class="col-3">
-      <%= render "side_bar" %>
+<div class="jumbotron jumbotron-extend">
+  <div class="container-fluid jumbotron-container">
+    <div class="header">
+      <% if user_signed_in? %>
+            <div class="greeting">
+              こんにちは、<%= link_to "#{current_user.name}", "/users/#{current_user.id}", class: :greeting__link %>さん
+            </div>
+      <% end %>
     </div>
-    <div class="col-6 bg-info">
-      <%= render "main" %>
-    </div>
-    <div class="col-3">
-      <%= render "message_bar" %>
-    </div>
+    <h1 class="site-name">Trip × Happy = Trippy</h1>
+    <p><a class="btn btn-black" href="trips/new.html" role="button">New Trip (投稿する)</a></p>
+
   </div>
 </div>
+
+<main class="container-fluid contents">
+  <div class="content-primary">
+    <%= render partial: "main", collection: @trips %>
+  </div>
+  <div class="content-secondary">
+    <%= render "side_bar" %>
+  </div>
+</main>
