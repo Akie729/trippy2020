@@ -32,8 +32,6 @@ Trippy
 ・行先ランキング表示機能
 ・旅行ごとにアルバムにまとめて管理する機能
 
-## 実装した機能についてのGIFと説明
-
 ## データベース設計
 ![ER図](app/assets/images/database.png)
 
@@ -54,5 +52,19 @@ Trippy
 閲覧は誰でも可能です。
 投稿する場合や他のユーザーの投稿にコメントをしたりメッセージを送りたい場合にはユーザー登録が必要です。
 
-## ローカルでの動作方法
+## 使用技術
+■フロントエンド
+●HTML
+●CSS
+●Bootstrap4
+●JavaScript(jQuely)
+
+■バックエンド
+●Ruby 2.6.5
+●Ruby on Rails'6.0.0'
+
+■その他
+●Git/GitHub
+●MySQL
+●VSCode
 
