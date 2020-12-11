@@ -152,3 +152,7 @@
     }
 
 }
+
+.image-element img{
+  max-width: 250px;
+}
